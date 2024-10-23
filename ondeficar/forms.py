@@ -1,5 +1,5 @@
 from django import forms
-from .models import Hotel, Lugar, Locatario
+from .models import Hotel, Lugar
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -31,15 +31,6 @@ class LugarForm(forms.ModelForm):
             'locatario': forms.Select(attrs={'class': 'form-control'}),
         }
 
-class LocatarioForm(forms.ModelForm):
-    class Meta:
-        model = Locatario
-        fields = ['nome_completo', 'email', 'telefone']
-        widgets = {
-            'nome_completo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome Completo'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
-            'telefone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Telefone (Opcional)'}),
-        }
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))

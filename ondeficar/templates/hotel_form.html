@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Hotel</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Hotel</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit">Cadastrar Hotel</button>
+    </form>
+
+    <br>
+    <a href="{% url 'hotel-list' %}">Voltar para a lista de hotéis</a>
+</body>
+</html>

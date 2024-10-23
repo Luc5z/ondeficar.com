@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Lugar</title>
+</head>
+<body>
+    <h1>Cadastrar Novo Lugar</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit">Cadastrar Lugar</button>
+    </form>
+
+    <br>
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</body>
+</html>
