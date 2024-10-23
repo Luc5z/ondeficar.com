@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* navbar */
+
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -71,3 +73,13 @@
     }
 
 }
+
+/* end navbar */
+
+/* slide */
+
+.carousel {
+    margin-top: 60px; /* ajuste o valor conforme necessário */
+}
+
+/* end slide */
