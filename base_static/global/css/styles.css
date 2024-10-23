@@ -50,7 +50,7 @@
 }
 
 .nav-link:hover, .nav-link:active {
-    color: #007bff;
+    color: #17A035;
 }
 
 @media (min-width: 991px) {
@@ -62,7 +62,7 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background-color: #007bff;
+        background-color: #17A035;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -74,6 +74,7 @@
 
 }
 
+
 /* end navbar */
 
 /* slide */
@@ -83,3 +84,9 @@
 }
 
 /* end slide */
+
+#sair a{
+    text-decoration: none;
+    color: #ff0000;
+}
+
