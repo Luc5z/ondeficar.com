@@ -30,6 +30,3 @@ class Lugar(models.Model):
 
     def __str__(self):
         return f'{self.categoria.capitalize()} - {self.localizacao}'
-
-
-

@@ -42,9 +42,11 @@
   </button>
 </div>
 
-<div class="col-xxl-5">
+{% comment %} end-slide {% endcomment %}
+
+<div class="col-xxl-center">
   <!-- Header text content-->
-  <div class="text-center text-xxl-start">
+  <div class="text-center text-xxl-center">
       <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Design &middot; Development &middot; Marketing</div></div>
       <div class="fs-3 fw-light text-muted">Desfrute de tranquilidade e segurança</div>
       <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Hospede seu imóvel conosco!</span></h1>
@@ -55,6 +57,42 @@
 </div>
 
 
-{% comment %} end-slide {% endcomment %}
+{% comment %} cards {% endcomment %}
+
+<div class="container py-5">
+  <h1 class="text-center">Hotéis populares em Belém</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+
+      <div class="col">
+          <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Nome do hotel</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+                      dignissimos accusantium amet similique velit iste.</p>
+                  <div class="d-flex">
+                      <!-- Estrelas de classificação -->
+                      <span class="text-warning">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                      </span>
+                  </div>
+              </div>
+              <div class="mb-5 d-flex justify-content-around">
+                  <button class="btn btn-primary">Se hospedar</button>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+
+{% comment %} end cards {% endcomment %}
+
+
 
 {% endblock content %}

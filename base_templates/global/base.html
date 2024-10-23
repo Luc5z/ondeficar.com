@@ -36,7 +36,7 @@
             {% if user.is_authenticated %}
                 <h5 id="sair" class="m-2"><a href="{% url 'logout' %}">Sair</a></h5>
             {% else %}
-                <a class="login-button" href="{% url 'login' %}">Login</a> | 
+                <a class="login-button" href="{% url 'login' %}">Login</a> 
                 <a class="login-button" href="{% url 'register' %}">Cadastrar</a>
             {% endif %}
 
