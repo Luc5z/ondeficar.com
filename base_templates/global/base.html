@@ -19,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="#"><i class="bi bi-house-fill"></i><h2><strong> Onde<span style="color: #17A035;">ficar </span></strong></h2></a>
+            <a class="navbar-brand me-auto" href="#"><h2><i class="bi bi-house-fill"></i><strong> Onde<span style="color: #17A035;">ficar </span></strong></h2></a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -47,7 +47,7 @@
             {% if user.is_authenticated %}
                 <h5 id="sair"><a href="{% url 'logout' %}">Sair</a></h5>
             {% else %}
-                <a class="login-button" href="{% url 'login' %}">Login</a> | 
+                <a class="login-button" href="{% url 'login' %}">Login</a> 
                 <a class="login-button" href="{% url 'register' %}">Cadastrar</a>
             {% endif %}
 
