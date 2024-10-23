@@ -1,7 +1,80 @@
 {% extends "global/base.html" %}
 {% load static %}
+
+{% block navbar %}
+<li class="nav-item">
+    <a class="nav-link mx-lg-2" aria-current="page" href="{% url 'home' %}"><h5>Lugares</h5></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link mx-lg-2 active" href="{% url 'hotel_list' %}"><h5>Hotéis</h5></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link mx-lg-2" href="#"><h5>Mapa</h5></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
+</li>
+{% endblock navbar %}
+
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Hotéis Populares em Belém</h1>
+        </div>
+    </div>
+    <div class="row mt-5">
+        {% for hotel in hoteis %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <!-- Definir o estilo para controlar o tamanho da imagem -->
+                <img src="{{ hotel.foto.url }}" class="card-img-top img-fluid hotel-img" alt="{{ hotel.nome }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ hotel.nome }}</h4>
+                    <p class="card-text">{{ hotel.descricao }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{{ hotel.link }}" class="btn btn-sm btn-outline-secondary" target="_blank">Ver</a>
+                        </div>
+                        <small class="text-muted">{{ hotel.cidade }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
+</br>
+</br>
+</br>
+
+<section class="bg-light py-3 mt-5">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-xxl-8">
+                <div class="text-center my-5">
+                    <h3 class="display-5 fw-bolder"><span class="text-gradient d-inline">Ondeficar</span></h3>
+                    <p class="lead fw-light mb-4">O nosso objetivo é ajudar <i>você</i> a fazer a <span style="text-decoration: underline;">melhor escolha</span>!</p>
+                    <p class="text-muted">O nosso site oferece a maior variedade em um só lugar, com opções exclusivas que você não encontrará em nenhum outro lugar.</p>
+                    <div class="d-flex justify-content-center fs-2 gap-4">
+                        <a class="text-gradient" style="color: #4CAF50;" href="#!"><i class="bi bi-twitter"></i></a>
+                        <a class="text-gradient" style="color: #4CAF50;" href="#!"><i class="bi bi-linkedin"></i></a>
+                        <a class="text-gradient" style="color: #4CAF50;" href="#!"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hotel-img {
+        object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+        width: 100%; /* Ocupar 100% da largura do cartão */
+        height: 250px; /* Define uma altura fixa para todas as imagens */
+    }
+</style>
 
 {% endblock content %}

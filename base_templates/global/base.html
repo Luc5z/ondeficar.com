@@ -19,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto" href="#"><i class="bi bi-house-fill"></i><h2><strong> Onde<span style="color: #17A035;">ficar </span></strong></h2></a>
+            <a class="navbar-brand me-auto" href="{% url 'home' %}"><h2><i class="bi bi-house-fill"></i><strong> Onde<span style="color: #17A035;">ficar </span></strong></h2></a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -28,24 +28,13 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2 active" aria-current="page" href="#"><h5>Lugares</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#"><h5>Hotéis</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#"><h5>Mapa</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
-                        </li>
+                        {% block navbar %} {% endblock navbar %}
                     </ul>
                 </div>
             </div>
 
             {% if user.is_authenticated %}
-                <h5 id="sair"><a href="{% url 'logout' %}">Sair</a></h5>
+                <h5 id="sair" class="m-2"><a href="{% url 'logout' %}">Sair</a></h5>
             {% else %}
                 <a class="login-button" href="{% url 'login' %}">Login</a> | 
                 <a class="login-button" href="{% url 'register' %}">Cadastrar</a>
@@ -58,7 +47,7 @@
     </nav>
     <!-- end-navbar -->
 
-    <main class="content">
+    <main class="content" style="margin-top: 80px;">
 
         {% block content %}{% endblock content %}
 
