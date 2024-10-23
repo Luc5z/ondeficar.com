@@ -10,7 +10,7 @@ from .forms import UserRegisterForm, HotelForm, LugarForm
 # View para listar hotéis
 class HotelListView(ListView):
     model = Hotel
-    template_name = 'hotel.html'
+    template_name = 'hotel_list.html'
     context_object_name = 'hoteis'
 
 # View para a página inicial, listando lugares

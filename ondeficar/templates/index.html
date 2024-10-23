@@ -1,5 +1,21 @@
 {% extends "global/base.html" %}
 {% load static %}
+
+{% block navbar %}
+<li class="nav-item">
+  <a class="nav-link mx-lg-2 active" aria-current="page" href="{% url 'home' %}"><h5>Lugares</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" href="{% url 'hotel_list' %}"><h5>Hotéis</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" href="#"><h5>Mapa</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
+</li>
+{% endblock navbar %}
+
 {% block content %}
 
 {% comment %} slide {% endcomment %}
@@ -34,11 +50,12 @@
       <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Design &middot; Development &middot; Marketing</div></div>
       <div class="fs-3 fw-light text-muted">Desfrute de tranquilidade e segurança</div>
       <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Hospede seu imóvel conosco!</span></h1>
-      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-center mb-3">
-          <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">hospedar</a>
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+          <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Hospedar</a>
       </div>
   </div>
 </div>
+
 
 {% comment %} cards {% endcomment %}
 
@@ -75,6 +92,7 @@
 
 
 {% comment %} end cards {% endcomment %}
+
 
 
 {% endblock content %}

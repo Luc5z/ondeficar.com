@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ondeficar</title>
+{% extends "global/base.html" %}    
+{% load static %}
+
+{% block content %}
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
     <style>
         body {
             display: flex;
@@ -13,6 +15,7 @@
             margin: 0;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            position: relative; /* Necessário para posicionar o botão no body */
         }
 
         .container {
@@ -59,9 +62,34 @@
             text-decoration: underline;
             text-decoration-color: #4CAF50;
         }
+
+        /* Estilo para o botão de voltar */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            background-color: green;
+        }
+
+        .back-button i {
+            font-size: 18px;
+        }
+
     </style>
-</head>
-<body>
+
 
     <div class="container">
         <h1>O que <span id="voce">você</span> quer cadastrar?</h1>
@@ -75,5 +103,8 @@
         </div>
     </div>
 
-</body>
-</html>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+{% endblock content %}
