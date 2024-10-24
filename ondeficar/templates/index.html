@@ -63,34 +63,30 @@
 
   <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
     {% for lugar in lugares %}
-    <div class="col">
-      <div class="card h-100">
-        <img src="{{ lugar.foto.url }}" class="card-img-top" alt="{{ lugar.nome }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ lugar.nome }}</h5>
-          <p class="card-text"><strong>{{ lugar.localizacao }} </strong> {{ lugar.preco }} </p>
-          <div class="d-flex">
+    <div class="card">
+      <div class="card-image"><img class="card-img" src="{{ lugar.foto.url }}" alt=""></div>
+      <p class="card-title">{{ lugar.nome }}</p>
+      <p class="card-body">{{ lugar.descricao }}</p>
 
+      <div class="d-flex">
+
+        <span class="text-warning">
+
+          <div class="stars d-flex">
             <span class="text-warning">
-
-              <div class="d-flex">
-                <span class="text-warning">
-                  {% if lugar.classificacao >= 1 %}<i class="bi bi-star-fill"></i>{% endif %}
-                  {% if lugar.classificacao >= 2 %}<i class="bi bi-star-fill"></i>{% endif %}
-                  {% if lugar.classificacao >= 3 %}<i class="bi bi-star-fill"></i>{% endif %}
-                  {% if lugar.classificacao >= 4 %}<i class="bi bi-star-fill"></i>{% endif %}
-                  {% if lugar.classificacao >= 5 %}<i class="bi bi-star-fill"></i>{% endif %}
-                </span>
-              </div>
-              
+              {% if lugar.classificacao >= 1 %}<i class="bi bi-star-fill"></i>{% endif %}
+              {% if lugar.classificacao >= 2 %}<i class="bi bi-star-fill"></i>{% endif %}
+              {% if lugar.classificacao >= 3 %}<i class="bi bi-star-fill"></i>{% endif %}
+              {% if lugar.classificacao >= 4 %}<i class="bi bi-star-fill"></i>{% endif %}
+              {% if lugar.classificacao >= 5 %}<i class="bi bi-star-fill"></i>{% endif %}
             </span>
-
           </div>
-        </div>
-        <div class="mb-5 d-flex justify-content-around">
-          <button class="btn btn-primary">Se hospedar</button>
-        </div>
+          
+        </span>
+
       </div>
+
+
     </div>
     {% endfor %}
   </div>
