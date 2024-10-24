@@ -56,35 +56,48 @@
   </div>
 </div>
 
-
 {% comment %} cards {% endcomment %}
 
 <div class="container py-5 mt-5">
   <h1 class="text-center">Hotéis populares em Belém</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
 
-      <div class="col">
-          <div class="card card-normal">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                  <h5 class="card-title">Nome do hotel</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-                      dignissimos accusantium amet similique velit iste.</p>
-                  <div class="d-flex">
-                      <span class="text-warning">
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                          <i class="bi bi-star-fill"></i>
-                      </span>
-                  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+    {% for lugar in lugares %}
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{ lugar.foto.url }}" class="card-img-top" alt="{{ lugar.nome }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ lugar.nome }}</h5>
+          <p class="card-text">{{ lugar.descricao }}</p>
+          <div class="d-flex">
+
+            <span class="text-warning">
+
+              <div class="d-flex">
+                <span class="text-warning">
+                  {% if lugar.classificacao >= 1 %}<i class="bi bi-star-fill"></i>{% endif %}
+                  {% if lugar.classificacao >= 2 %}<i class="bi bi-star-fill"></i>{% endif %}
+                  {% if lugar.classificacao >= 3 %}<i class="bi bi-star-fill"></i>{% endif %}
+                  {% if lugar.classificacao >= 4 %}<i class="bi bi-star-fill"></i>{% endif %}
+                  {% if lugar.classificacao >= 5 %}<i class="bi bi-star-fill"></i>{% endif %}
+                </span>
+
               </div>
-              <div class="mb-5 d-flex justify-content-around">
-                  <button class="btn btn-primary">Se hospedar</button>
-              </div>
+              
+            </span>
+
           </div>
+        </div>
+        <div class="mb-5 d-flex justify-content-around">
+          <button class="btn btn-primary">Se hospedar</button>
+        </div>
       </div>
+
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
       <div class="col">
         <div class="card card-green">
@@ -114,9 +127,6 @@
 
 <div class="gtranslate_wrapper"></div>
 
-
 {% comment %} end cards {% endcomment %}
-
-
 
 {% endblock content %}
