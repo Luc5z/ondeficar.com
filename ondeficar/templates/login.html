@@ -1,18 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Login</title>
-</head>
-<body>
-    <h2>Faça login para continuar:</h2>
-    
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-    
-    <p>Não tem uma conta? <a href="/register">Cadastre-se aqui</a></p>
-</body>
+    <style>
+      body {
+        background-image: url(https://images7.alphacoders.com/132/1323576.png);
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 310px;
+        height: 450px;
+        backdrop-filter: blur(10px);
+      }
+
+      section a {
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      section a:hover {
+        color: #0b330c;
+      }
+
+      section p {
+        margin: 0;
+        color: white;
+      }
+
+      .forms {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .helptext {
+        display: none;
+      }
+
+      .forms p {
+        margin: 0;
+      }
+
+      .forms p a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .welcomebox {
+        text-align: center;
+      }
+
+      .welcomebox h2 {
+        margin: 5px 0;
+        font-size: 3rem;
+        color: #000000;
+      }
+
+      .welcomebox p {
+        margin: 0;
+        color: #000000;
+        font-size: 1.2rem;
+      }
+
+      .submitButton {
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 50px;
+        background-color: #4caf50;
+        color: rgb(255, 255, 255);
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+
+      .submitButton:hover {
+        background-color: #45a049;
+      }
+
+      .inputs {
+        display: border-box;
+        width: 97%;
+        margin-bottom: 10px;
+      }
+      .inputs p {
+        display: flex;
+        flex-direction: column;
+      }
+      .inputs p label {
+        display: none;
+      }
+
+      input {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+      }
+      input:focus {
+        outline: none;
+        border-color: #4caf50;
+        box-shadow: 0 0 5px #4caf50;
+      }
+      .forgot-password {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .forgot-password a:hover {
+        color: #089411;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="welcomebox">
+          <h2>Olá!</h2>
+          <p>Faça login para continuar</p>
+        </div>
+
+        <form class="forms" method="post">
+          {% csrf_token %}
+          <div class="inputs">{{ form.as_p }}</div>
+          <p class="forgot-password"><a href="">Esqueceu sua senha?</a></p>
+          <button class="submitButton" type="submit">Login</button>
+        </form>
+
+        <p>
+          Não tem uma conta? <a href="/register"><strong>Criar</strong></a>
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
