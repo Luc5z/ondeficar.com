@@ -19,18 +19,44 @@ class HotelForm(forms.ModelForm):
 class LugarForm(forms.ModelForm):
     class Meta:
         model = Lugar
-        fields = ['nome','preco', 'localizacao', 'categoria', 'descricao', 'link', 'classificacao', 'foto', 'locatario']
+        fields = ['nome', 'preco', 'localizacao', 'categoria', 'descricao', 'link', 'classificacao', 'foto', 'locatario']
         widgets = {
-            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome do Lugar'}),
-            'preco': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Preço'}),
-            'localizacao': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Localização'}),
-            'categoria': forms.Select(attrs={'class': 'form-control'}),
-            'descricao': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Descrição'}),
-            'link': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Link do Lugar'}),
-            'classificacao': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Classificação'}),
-            'foto': forms.ClearableFileInput(attrs={'class': 'form-control'}),
-            'locatario': forms.Select(attrs={'class': 'form-control'}),
+            'nome': forms.TextInput(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Nome do Lugar'
+            }),
+            'preco': forms.NumberInput(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Preço'
+            }),
+            'localizacao': forms.TextInput(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Localização'
+            }),
+            'categoria': forms.Select(attrs={
+                'class': 'form-select mb-3'
+            }),
+            'descricao': forms.Textarea(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Descrição', 
+                'rows': 4
+            }),
+            'link': forms.URLInput(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Link do Lugar'
+            }),
+            'classificacao': forms.NumberInput(attrs={
+                'class': 'form-control mb-3', 
+                'placeholder': 'Classificação'
+            }),
+            'foto': forms.ClearableFileInput(attrs={
+                'class': 'form-control mb-3'
+            }),
+            'locatario': forms.Select(attrs={
+                'class': 'form-select mb-3'
+            }),
         }
+
 
 
 class UserRegisterForm(UserCreationForm):
