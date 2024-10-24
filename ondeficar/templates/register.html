@@ -10,12 +10,37 @@
         margin: 0;
         padding: 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
         font-family: Arial, sans-serif;
       }
 
+
+      .homebutton {
+        position: fixed;
+        height: 40px;
+        width: 80px;
+        bottom: 20px;
+        left: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        color: rgb(255, 255, 255);
+      }
+      .homebutton a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+      }
       section {
         display: flex;
         flex-direction: column;
@@ -50,7 +75,10 @@
       section a {
         color: rgb(255, 255, 255);
       }
-      
+      section a:hover {
+        color: #0b330c;
+      }
+
       .forms {
         display: flex;
         flex-direction: column;
@@ -153,6 +181,7 @@
     </style>
   </head>
   <body>
+    
     <main>
       <section>
         <div class="welcomebox">
@@ -171,5 +200,9 @@
         <p>já tem uma conta? <a href="/login"><strong>Fazer login</strong></a></p>
       </section>
     </main>
+    <button type="button" class="homebutton">
+      <a href="">home</a>
+    </button>
+    
   </body>
 </html>
