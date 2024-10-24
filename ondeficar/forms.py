@@ -19,8 +19,9 @@ class HotelForm(forms.ModelForm):
 class LugarForm(forms.ModelForm):
     class Meta:
         model = Lugar
-        fields = ['preco', 'localizacao', 'categoria', 'descricao', 'link', 'classificacao', 'foto', 'locatario']
+        fields = ['nome','preco', 'localizacao', 'categoria', 'descricao', 'link', 'classificacao', 'foto', 'locatario']
         widgets = {
+            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome do Lugar'}),
             'preco': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Preço'}),
             'localizacao': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Localização'}),
             'categoria': forms.Select(attrs={'class': 'form-control'}),
