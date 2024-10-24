@@ -45,7 +45,12 @@
 
       section p {
         margin: 0;
+        color: rgb(255, 255, 255);
       }
+      section a {
+        color: rgb(255, 255, 255);
+      }
+
 
       .forms {
         display: flex;
@@ -83,12 +88,12 @@
 
         margin: 5px 0;
         font-size: 2rem;
-        color: #fff;
+        color: #000000;
       }
 
       .welcomebox p {
         margin: 0;
-        color: #fff;
+        color: #000000;
         font-size: 1.2rem;
       }
 
@@ -108,11 +113,25 @@
         background-color: #45a049;
       }
 
+      .inputs {
+        display: border-box;
+        width: 97%;
+        margin-bottom: 10px;
+      }
+      .inputs p {
+        display: flex;
+        flex-direction: column;
+      }
+      .inputs p label {
+        display: none;
+      }
+
       input {
+        margin-bottom: 15px;
         padding: 10px;
-        width: 100%;
-        border-radius: 5px;
+        border-radius: 50px;
         border: 1px solid rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.7);
         font-size: 1rem;
       }
 
@@ -144,7 +163,9 @@
 
         <form class="forms" method="post">
           {% csrf_token %}
-          {{ form.as_p }}
+          <div class="inputs">
+            {{ form.as_p }}
+          </div>
           <button class="submitButton" type="submit">Login</button>
         </form>
 
