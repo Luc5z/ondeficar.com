@@ -3,9 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Lugar</title>
+    <style>
+        body {
+          background-image: url(https://images7.alphacoders.com/132/1323576.png);
+          background-size: cover;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+        }
+  
+  
+        .homebutton {
+          position: fixed;
+          height: 40px;
+          width: 80px;
+          bottom: 20px;
+          left: 20px;
+          font-size: 16px;
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.3);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          color: rgb(255, 255, 255);
+        }
+        .homebutton a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+        }
+        section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          height: 800px;
+          backdrop-filter: blur(10px);
+        }
+  
+        section a {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+  
+        section a:hover {
+          color: #4caf50;
+        }
+  
+        section p {
+          margin: 0;
+          color: rgb(255, 255, 255);
+        }
+        section a {
+          color: rgb(255, 255, 255);
+        }
+        section a:hover {
+          color: #0b330c;
+        }
+  
+        .forms {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2px;
+          gap: 5px;
+          width: 100%;
+        }
+  
+        .helptext {
+          display: none !important;
+        }
+  
+        ul {
+          display: none;
+        }
+  
+        .forms p {
+          margin: 0;
+        }
+  
+        .forms p a {
+          text-decoration: none;
+          color: rgba(0, 0, 0, 0.6);
+          font-size: 0.9rem;
+        }
+  
+        .welcomebox {
+          text-align: center;
+        }
+  
+        .welcomebox h2 {
+  
+          margin: 5px 0;
+          font-size: 2rem;
+          color: #000000;
+        }
+  
+        .welcomebox p {
+          margin: 0;
+          color: #000000;
+          font-size: 1.2rem;
+        }
+  
+        .submitButton {
+          padding: 15px 30px;
+          font-size: 16px;
+          cursor: pointer;
+          border: none;
+          border-radius: 50px;
+          background-color: #4caf50;
+          color: rgb(255, 255, 255);
+          transition: background-color 0.3s ease;
+          width: 100%;
+        }
+  
+        .submitButton:hover {
+          background-color: #45a049;
+        }
+  
+        .inputs {
+          display: border-box;
+          width: 97%;
+          margin-bottom: 10px;
+        }
+        .inputs p {
+          display: flex;
+          flex-direction: column;
+        }
+        label{
+          display: none;
+        }
+  
+        input {
+          margin-bottom: 15px;
+          padding: 10px;
+          border-radius: 50px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          background-color: rgba(255, 255, 255, 0.7);
+          font-size: 1rem;
+        }
+  
+        input:focus {
+          outline: none;
+          border-color: #4caf50;
+          box-shadow: 0 0 5px #4caf50;
+        }
+  
+        .forgot-password {
+          margin-top: 10px;
+          font-size: 0.9rem;
+          color: rgba(0, 0, 0, 0.7);
+        }
+  
+        .forgot-password a:hover {
+          color: #4caf50;
+        }
+  
+      </style>
 </head>
 <body>
-    <h1>Cadastrar Novo Lugar</h1>
+    <section>
+    <h2>Cadastrar Novo Lugar</h2>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -16,5 +193,6 @@
 
     <br>
     <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</section>
 </body>
 </html>
