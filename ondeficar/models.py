@@ -23,7 +23,7 @@ class Lugar(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2)  # Preço do lugar
     localizacao = models.CharField(max_length=255)  # Localização do lugar
     categoria = models.CharField(max_length=10, choices=CATEGORIA_CHOICES)  # Categoria (Navio, Casa, Hotel)
-    descricao = models.TextField()  # Descrição do lugar
+    descricao = models.TextField(blank=True, null=True)  # Descrição do lugar
     link = models.URLField()  # Link para o lugar
     classificacao = models.IntegerField()
     locatario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='lugares')  # Locatário que cadastrou o lugar
