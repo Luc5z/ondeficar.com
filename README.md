@@ -2,7 +2,7 @@
 
 ```
 git clone https://github.com/Luc5z/ondeficar.com.git
-cd nome-do-seu-projeto
+cd ondeficar.com
 ```
 
 ## Crie um ambiente virtual (recomendado)
@@ -25,12 +25,6 @@ source venv/bin/activate
 ```
 
 ## Configuração do Projeto Django
-
-Navegue até a pasta do projeto Django:
-
-```
-cd nome_da_pasta_do_projeto_django
-```
 
 Execute as migrações para criar a estrutura do banco de dados:
 
