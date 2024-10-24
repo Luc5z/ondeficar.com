@@ -1,107 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Login</title>
-    <style>
-      body {
-        background-image: url(https://images7.alphacoders.com/132/1323576.png);
-        background-size: cover;
-      }
-
-      main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-
-      section{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        width: 310px;
-        height:450px;
-      }
-      section a {
-        color: black;
-      }
-      section p {
-        margin: 0;
-      }
-
-      .forms {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        gap: 10px;
+</head>
+<body>
+    <h2>Faça login para continuar:</h2>
     
-      }
-      .forms p {
-        margin: 0;
- 
-      }
-      .forms p a {
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.6);
-      }
-      .forms button {
-        margin-top: 30px;
-      }
-
-      .welcomebox {
-        text-align: center;
-      }
-      .welcomebox h2 {
-        font-size: 3rem;
-      }
-      .welcomebox h2,
-      .welcomebox p {
-        margin: 0;
-      }
-
-      .submitButton {
-        padding: 15px 30px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 50px;
-        background-color: #4caf50;
-        color: rgb(255, 255, 255);
-        transition: background-color 0.3s ease;
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section>
-        <div class="welcomebox">
-          <h2>Olá!</h2>
-          <p>Faça login para continuar</p>
-        </div>
-
-        <form class="forms" method="post">
-          {% csrf_token %} {{ form.as_p }}
-          <p><a href="">Esqueceu sua senha?</a></p>
-          <button class="submitButton" type="submit">Login</button>
-          
-        </form>
-
-        <p>Não tem uma conta? <a href="/register"><strong>Criar</strong></a></p>
-      </section>
-    </main>
-  </body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    
+    <p>Não tem uma conta? <a href="/register">Cadastre-se aqui</a></p>
+</body>
 </html>
