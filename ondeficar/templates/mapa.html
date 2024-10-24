@@ -1,6 +1,21 @@
 {% extends "global/base.html" %}    
 {% load static %}
 
+{% block navbar %}
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" aria-current="page" href="{% url 'home' %}"><h5>Lugares</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" href="{% url 'hotel_list' %}"><h5>Hotéis</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2 active" href="{% url 'mapa' %}"><h5>Mapa</h5></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
+</li>
+{% endblock navbar %}
+
 {% block content %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" /> 
     <style>
@@ -57,7 +72,8 @@
         <div class="card">
             <h5>Hotel Grand Mercure</h5>
             <p>Valor da Diária: R$347</p>
-            <img class="selo" src="{% static '/global/img/selo-green.png' %}">
+            
+            
         </div>
         <div class="card">
             <h5>Hotel Radisson</h5>

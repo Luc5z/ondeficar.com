@@ -9,7 +9,7 @@
     <a class="nav-link mx-lg-2 active" href="{% url 'hotel_list' %}"><h5>Hotéis</h5></a>
 </li>
 <li class="nav-item">
-    <a class="nav-link mx-lg-2" href="#"><h5>Mapa</h5></a>
+    <a class="nav-link mx-lg-2" href="{% url 'mapa' %}"><h5>Mapa</h5></a>
 </li>
 <li class="nav-item">
     <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
@@ -31,7 +31,7 @@
                 <!-- Definir o estilo para controlar o tamanho da imagem -->
                 <img src="{{ hotel.foto.url }}" class="card-img-top img-fluid hotel-img" alt="{{ hotel.nome }}">
                 <div class="card-body">
-                    <h4 class="card-title">{{ hotel.nome }}</h4>
+                    <h2 class="card-title">{{ hotel.nome }}</h2>
                     <p class="card-text">{{ hotel.descricao }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">

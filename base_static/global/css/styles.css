@@ -147,3 +147,26 @@
 }
 
 /* end card style */
+.lugar-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+  
+  .lugar-img {
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste ao container sem distorção */
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card-text {
+    flex-grow: 1;
+  }
+  

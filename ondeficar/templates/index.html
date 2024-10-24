@@ -9,7 +9,7 @@
   <a class="nav-link mx-lg-2" href="{% url 'hotel_list' %}"><h5>Hotéis</h5></a>
 </li>
 <li class="nav-item">
-  <a class="nav-link mx-lg-2" href="#"><h5>Mapa</h5></a>
+  <a class="nav-link mx-lg-2" href="{% url 'mapa' %}"><h5>Mapa</h5></a>
 </li>
 <li class="nav-item">
   <a class="nav-link mx-lg-2" href="{% url 'landing' %}"><h5>Hospedar</h5></a>
@@ -62,33 +62,29 @@
   <h1 class="text-center">Hotéis populares em Belém</h1>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
-    {% for lugar in lugares %}
-    <div class="card">
-      <div class="card-image"><img class="card-img" src="{{ lugar.foto.url }}" alt=""></div>
-      <p class="card-title">{{ lugar.nome }}</p>
-      <p class="card-body">{{ lugar.descricao }}</p>
 
-      <div class="d-flex">
-
-        <span class="text-warning">
-
-          <div class="stars d-flex">
-            <span class="text-warning">
-              {% if lugar.classificacao >= 1 %}<i class="bi bi-star-fill"></i>{% endif %}
-              {% if lugar.classificacao >= 2 %}<i class="bi bi-star-fill"></i>{% endif %}
-              {% if lugar.classificacao >= 3 %}<i class="bi bi-star-fill"></i>{% endif %}
-              {% if lugar.classificacao >= 4 %}<i class="bi bi-star-fill"></i>{% endif %}
-              {% if lugar.classificacao >= 5 %}<i class="bi bi-star-fill"></i>{% endif %}
-            </span>
-          </div>
-          
-        </span>
-
+{% for lugar in lugares %}
+    <div class="card lugar-card" style="width: 18rem;">
+      <img src="{{ lugar.foto.url }}" class="card-img-top lugar-img" alt="{{ lugar.nome }}">
+      <div class="card-body">
+        <h3 class="">{{ lugar.nome }}</h3>
+        <p class="card-text">
+          <strong>Classificação:</strong>
+          <span class="stars text-warning">
+            {% if lugar.classificacao >= 1 %}<i class="bi bi-star-fill"></i>{% endif %}
+            {% if lugar.classificacao >= 2 %}<i class="bi bi-star-fill"></i>{% endif %}
+            {% if lugar.classificacao >= 3 %}<i class="bi bi-star-fill"></i>{% endif %}
+            {% if lugar.classificacao >= 4 %}<i class="bi bi-star-fill"></i>{% endif %}
+            {% if lugar.classificacao >= 5 %}<i class="bi bi-star-fill"></i>{% endif %}
+          </span><br>
+           {{ lugar.localizacao }} <h5>R${{ lugar.preco }}</h5>
+        </p>
+        <a href="{{ lugar.link }}" class="btn btn-primary" target="_blank">Ver Lugar</a> 
       </div>
-
-
     </div>
-    {% endfor %}
+{% endfor %}
+
+    
   </div>
 </div>
 
